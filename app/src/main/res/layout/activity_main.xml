@@ -22,8 +22,7 @@
         android:id="@+id/nameText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignBottom="@+id/phoneText"
-        android:text="Name" />
+        android:layout_alignBottom="@+id/phoneText" />
 
     <EditText
         android:layout_width="150dp"
@@ -32,8 +31,7 @@
         android:layout_toRightOf="@+id/nameText"
         android:layout_alignBottom="@+id/addButton"
         android:layout_toLeftOf="@+id/addButton"
-        android:layout_toStartOf="@+id/addButton"
-        android:text="Phone #" />
+        android:layout_toStartOf="@+id/addButton" />
 
     <ListView
         android:layout_width="wrap_content"

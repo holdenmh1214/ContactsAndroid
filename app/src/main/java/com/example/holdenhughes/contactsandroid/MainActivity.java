@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         phoneText = (EditText) findViewById(R.id.phoneText);
         addButton = (Button) findViewById(R.id.addButton);
 
+        nameText.setHint("Name");
+        phoneText.setHint("Phone #");
+
         contacts = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
         listView.setAdapter(contacts);
 
@@ -38,15 +41,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         String text = nameText.getText().toString();
         String text1 = phoneText.getText().toString();
-        String textFinal = String.format("%s (%s)",nameText,phoneText);
+        String textFinal = String.format("%s (%s)",text,text1);
         contacts.add(textFinal);
-        nameText.setText("Name");
-        phoneText.setText("Phone #");
 
     }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-        return false;
+        String contactToRemove = contacts.getItem(position);
+        contacts.remove(contactToRemove);
+
+        return true;
     }
 }
